@@ -121,7 +121,7 @@
 //   useEffect(() => {
 //     const fetchFAQs = async () => {
 //       try {
-//         const response = await fetch('http://35.200.147.33:9999/faqs');
+//         const response = await fetch('http://35.200.147.33/api/faqs');
 //         const data = await response.json();
 //         setFaqData(data);
 //       } catch (error) {
@@ -167,7 +167,7 @@ const FaqPage = () => {
         const token = localStorage.getItem('user_token');
 
         // Make API request using axios with Authorization header
-        const response = await axios.get('http://35.200.147.33:9999/users/faqs', {
+        const response = await axios.get('http://35.200.147.33/api/users/faqs', {
           headers: {
            user_token:token // Pass the token here
           }

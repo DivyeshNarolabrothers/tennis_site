@@ -34,7 +34,7 @@ const Loginpage = () => {
     e.preventDefault(); // Prevent default form submission
     try {
       const response = await axios.post(
-        "http://35.200.147.33:9999/user/login",
+        "http://35.200.147.33/api/user/login",
         {
           email,
           password,

@@ -70,7 +70,7 @@ function Market() {
     try {
       const Token = localStorage.getItem("user_token");
       const response = await axios.get(
-        "http://35.200.147.33:9999/users/market-status",
+        "http://35.200.147.33/api/users/market-status",
         {
           headers: { user_token: Token },
         }
@@ -109,7 +109,7 @@ function Market() {
     try {
       // Step 1: Fetch all players from the API
       const playersResponse = await axios.get(
-        "http://35.200.147.33:9999/users/players",
+        "http://35.200.147.33/api/users/players",
         { headers: { user_token: Token } }
       );
 
@@ -118,7 +118,7 @@ function Market() {
       const userId = decodedToken._id;
 
       const selectedTeamResponse = await axios.get(
-        `http://35.200.147.33:9999/users/selected-teamlist/${userId}`,
+        `http://35.200.147.33/api/users/selected-teamlist/${userId}`,
         { headers: { user_token: Token } }
       );
 
@@ -280,7 +280,7 @@ function Market() {
 
       // API call to sell the player
       const response = await axios.patch(
-        `http://35.200.147.33:9999/users/sell-player/${userId}`, // Ensure this endpoint is correct
+        `http://35.200.147.33/api/users/sell-player/${userId}`, // Ensure this endpoint is correct
         requestBody,
         {
           headers: {
@@ -344,7 +344,7 @@ function Market() {
       );
 
       const response = await axios.post(
-        `http://35.200.147.33:9999/users/updateTeam/${userId}`,
+        `http://35.200.147.33/api/users/updateTeam/${userId}`,
         { addPlayers },
         {
           headers: {
@@ -379,7 +379,7 @@ function Market() {
 
       // Fetch the selected team list for the user
       const response = await axios.get(
-        `http://35.200.147.33:9999/users/selected-teamlist/${userId}`,
+        `http://35.200.147.33/api/users/selected-teamlist/${userId}`,
         {
           headers: { user_token: Token },
         }
@@ -391,7 +391,7 @@ function Market() {
         setTeamName(team.name);
 
         // Set the team profile image
-        const baseUrl = "http://35.200.147.33:9999/images/"; // Adjust this URL to your actual image base URL
+        const baseUrl = "http://35.200.147.33/api/images/"; // Adjust this URL to your actual image base URL
         setTeamProfileImage(`${baseUrl}${team.profile_image}`);
         await fetchUserValues();
         // Handle value differences and set selected icons
@@ -430,7 +430,7 @@ function Market() {
 
       // Fetch the in-play value from the API
       axios
-        .get(`http://35.200.147.33:9999/users/user/in-play-value/${userId}`, {
+        .get(`http://35.200.147.33/api/users/user/in-play-value/${userId}`, {
           headers: { user_token: Token },
         })
         .then((response) => {
@@ -450,7 +450,7 @@ function Market() {
 
       // Fetch the overall value from another API (if needed)
       axios
-        .get(`http://35.200.147.33:9999/users/user/overall/${userId}`, {
+        .get(`http://35.200.147.33/api/users/user/overall/${userId}`, {
           headers: { user_token: Token },
         })
         .then((response) => {
@@ -850,7 +850,7 @@ function Market() {
                       {icon ? (
                         <div className="player-container">
                           <img
-                            src={`http://35.200.147.33:9999/images/${icon.profile_image}`}
+                            src={`http://35.200.147.33/api/images/${icon.profile_image}`}
                             alt="Player Profile"
                             className="player-image"
                             onClick={() => handlePlayerClick(icon)}
@@ -944,7 +944,7 @@ function Market() {
                           style={{ marginTop: "20px" }}
                         >
                           <img
-                            src={`http://35.200.147.33:9999/images/${icon.profile_image}`}
+                            src={`http://35.200.147.33/api/images/${icon.profile_image}`}
                             alt="Player Profile"
                             className="player-image"
                             onClick={() => {
@@ -1047,7 +1047,7 @@ function Market() {
                           style={{ marginTop: "20px" }}
                         >
                           <img
-                            src={`http://35.200.147.33:9999/images/${icon.profile_image}`}
+                            src={`http://35.200.147.33/api/images/${icon.profile_image}`}
                             alt="Player Profile"
                             className="player-image"
                             onClick={() => {
