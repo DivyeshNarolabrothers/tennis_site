@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.bg ,.bg2{
+  width: 100%;
+  height: 100vh;
+  position:fixed;
+  z-index: -1;
+  
+  
+} 
+
+.bg2{
+  display: none;
+}
+
+@media (max-width: 1023px) {
+.bg2{
+  display: block;
+}
+.bg{
+  display: none;
+}
+}
+
+
+
+
