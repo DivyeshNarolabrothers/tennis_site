@@ -251,6 +251,62 @@ function HomeScreen() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({ fullName: "User", credits: 0 });
 
+  // useEffect(() => {
+  //   // Get the user token from local storage
+  //   const token = localStorage.getItem("user_token");
+
+  //   if (token) {
+  //     try {
+  //       // Decode the token to get the user ID
+  //       const decodedToken = jwtDecode(token);
+  //       console.log("Decoded Token:", decodedToken); // Debugging line
+  //       const userId = decodedToken._id; // Assuming _id is directly in the decoded token
+
+  //       if (userId) {
+  //         console.log("User ID:", userId); // Debugging line
+  //         // Fetch user list from the API
+  //         axios.get("http://35.200.147.33/api/users/userList", {
+  //           headers: { user_token: token }
+  //         })
+  //         .then(response => {
+  //           console.log("API Response:", response.data); // Debugging line
+
+  //           // Access userDetails from the response
+  //           const userDetails = response.data.userDetails; // Accessing userDetails
+
+  //           // Check if userDetails is an array
+  //           if (Array.isArray(userDetails)) {
+  //             // Check if the user ID matches
+  //             const matchedUser = userDetails.find(user => user._id.toString() === userId.toString());
+  //             console.log("Matched User:", matchedUser); // Debugging line
+
+  //             if (matchedUser) {
+  //               // If there's a match, extract name and credits
+  //               const { name, credits } = matchedUser;
+  //               setUserData({ fullName: name, credits });
+  //             } else {
+  //               console.error("No user found with the matching ID.");
+  //             }
+  //           } else {
+  //             console.error("userDetails is not an array:", userDetails);
+  //           }
+  //         })
+  //         .catch(error => {
+  //           console.error("Error fetching user data", error);
+  //         });
+  //       } else {
+  //         console.error("User ID is not found in decoded token");
+  //       }
+  //     } catch (error) {
+  //       console.error("Failed to decode token", error);
+  //     }
+  //   } else {
+  //     console.error("Token not found in localStorage");
+  //   }
+
+  //   console.log("Component Mounted");
+  // }, []); // Empty array to run only on the first render
+
   useEffect(() => {
     // Get the user token from local storage
     const token = localStorage.getItem("user_token");
@@ -266,13 +322,13 @@ function HomeScreen() {
           console.log("User ID:", userId); // Debugging line
           // Fetch user list from the API
           axios.get("http://35.200.147.33/api/users/userList", {
-            headers: { user_token: token }
+            headers: { Authorization: `Bearer ${token}` } // Pass token in Bearer format
           })
           .then(response => {
             console.log("API Response:", response.data); // Debugging line
 
             // Access userDetails from the response
-            const userDetails = response.data.userDetails; // Accessing userDetails
+            const userDetails = response.data.userDetails; // Adjust this based on your actual response structure
 
             // Check if userDetails is an array
             if (Array.isArray(userDetails)) {

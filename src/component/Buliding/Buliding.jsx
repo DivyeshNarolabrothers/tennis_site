@@ -65,7 +65,7 @@ function Building() {
       const response = await axios.get(
         "http://35.200.147.33/api/users/market-status",
         {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}`},
         }
       );
 
@@ -96,7 +96,7 @@ function Building() {
     const Token = localStorage.getItem("user_token");
     axios
       .get("http://35.200.147.33/api/users/players", {
-        headers: { user_token: Token },
+        headers: { Authorization: `Bearer ${Token}`},
       })
       .then((response) => {
         if (response.data && Array.isArray(response.data.data)) {
@@ -282,7 +282,7 @@ function Building() {
       const response = await axios.post(
         `http://35.200.147.33/api/users/add-team/${userId}`,
         formData,
-        { headers: { user_token: Token } }
+        { headers: { Authorization: `Bearer ${Token}`} }
       );
 
       showAutoCloseAlert(response.data.message);
@@ -318,7 +318,7 @@ function Building() {
       // Fetch the in-play value from the API
       axios
         .get(`http://35.200.147.33/api/users/user/in-play-value/${userId}`, {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}` },
         })
         .then((response) => {
           // Extract the needed values from the response
@@ -338,7 +338,7 @@ function Building() {
       // Fetch the overall value from another API (if needed)
       axios
         .get(`http://35.200.147.33/api/users/user/overall/${userId}`, {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}` },
         })
         .then((response) => {
           setOverallValue(response.data.grand_total_value); // Set the overall value

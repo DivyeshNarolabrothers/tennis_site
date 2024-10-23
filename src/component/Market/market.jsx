@@ -72,7 +72,7 @@ function Market() {
       const response = await axios.get(
         "http://35.200.147.33/api/users/market-status",
         {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}` },
         }
       );
       
@@ -110,7 +110,7 @@ function Market() {
       // Step 1: Fetch all players from the API
       const playersResponse = await axios.get(
         "http://35.200.147.33/api/users/players",
-        { headers: { user_token: Token } }
+        { headers: { Authorization: `Bearer ${Token}` } }
       );
 
       // Step 2: Fetch selected team data from the second API
@@ -119,7 +119,7 @@ function Market() {
 
       const selectedTeamResponse = await axios.get(
         `http://35.200.147.33/api/users/selected-teamlist/${userId}`,
-        { headers: { user_token: Token } }
+        { headers: { Authorization: `Bearer ${Token}` } }
       );
 
       // Check for valid responses
@@ -284,7 +284,7 @@ function Market() {
         requestBody,
         {
           headers: {
-            user_token: Token,
+            Authorization: `Bearer ${Token}`,
             "Content-Type": "application/json",
           },
         }
@@ -348,7 +348,7 @@ function Market() {
         { addPlayers },
         {
           headers: {
-            user_token: Token,
+            Authorization: `Bearer ${Token}`,
             "Content-Type": "application/json",
           },
         }
@@ -381,7 +381,7 @@ function Market() {
       const response = await axios.get(
         `http://35.200.147.33/api/users/selected-teamlist/${userId}`,
         {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}` },
         }
       );
 
@@ -431,7 +431,7 @@ function Market() {
       // Fetch the in-play value from the API
       axios
         .get(`http://35.200.147.33/api/users/user/in-play-value/${userId}`, {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}`},
         })
         .then((response) => {
           // Extract the needed values from the response
@@ -451,7 +451,7 @@ function Market() {
       // Fetch the overall value from another API (if needed)
       axios
         .get(`http://35.200.147.33/api/users/user/overall/${userId}`, {
-          headers: { user_token: Token },
+          headers: { Authorization: `Bearer ${Token}` },
         })
         .then((response) => {
           setOverallValue(response.data.grand_total_value); // Set the overall value

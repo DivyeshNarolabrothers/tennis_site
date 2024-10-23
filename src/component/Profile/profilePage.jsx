@@ -43,7 +43,7 @@ function ProfilePage() {
         const response = await axios.get(
           `http://35.200.147.33/api/users/user/profile/${userId}`,
           {
-            headers: { user_token: Token },
+            headers: { Authorization: `Bearer ${Token}` },
           }
         );
 
