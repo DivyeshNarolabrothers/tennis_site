@@ -55,7 +55,7 @@ function ProfilePage() {
             credits: credits || "",
             team: team || null, // Set team data if available
           });
-          showAutoCloseAlert(response.data.message);
+          console.log(response.data.message);
         }
       } catch (error) {
         console.error("Error fetching profile data", error);

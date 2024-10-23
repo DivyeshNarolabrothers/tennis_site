@@ -401,23 +401,23 @@ function HomeScreen() {
 
           <div className="body-div">
             <div className="d-flex">
-              <div className="icon" onClick={() => navigate("/profile")}>
-                <i className="fa-regular fa-user"></i>
-                <h2>My Profile</h2>
+              <div className="icon">
+                <i className="fa-regular fa-user"  onClick={() => navigate("/profile")}></i>
+                <h2  onClick={() => navigate("/profile")}>My Profile</h2>
               </div>
-              <div className="icon" onClick={() => navigate("/myteam")}>
-                <i className="fa-solid fa-people-group"></i>
-                <h2>My Team</h2>
+              <div className="icon" >
+                <i className="fa-solid fa-people-group" onClick={() => navigate("/myteam")}></i>
+                <h2 onClick={() => navigate("/myteam")}>My Team</h2>
               </div>
             </div>
             <div className="d-flex">
-              <div className="icon" onClick={() => navigate("/market")}>
-                <img src={image1} className="market-img" alt="Market" />
-                <h2>The Market</h2>
+              <div className="icon" >
+                <img src={image1} className="market-img" alt="Market" onClick={() => navigate("/market")}/>
+                <h2 onClick={() => navigate("/market")}>The Market</h2>
               </div>
-              <div className="icon" onClick={() => navigate("/faq")}>
-                <i className="fa-solid fa-book-open"></i>
-                <h2>User Guide</h2>
+              <div className="icon" >
+                <i className="fa-solid fa-book-open" onClick={() => navigate("/faq")}></i>
+                <h2 onClick={() => navigate("/faq")}>User Guide</h2>
               </div>
             </div>
           </div>
