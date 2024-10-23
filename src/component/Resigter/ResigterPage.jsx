@@ -12,7 +12,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault(); // Prevent default form submission
 //     try {
-//       const response = await fetch("http://localhost:9999/user/register", {
+//       const response = await fetch("http://35.200.147.33/api/user/register", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
@@ -156,7 +156,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault(); // Prevent default form submission
 //     try {
-//       const response = await axios.post("http://localhost:9999/user/register", {
+//       const response = await axios.post("http://35.200.147.33/api/user/register", {
 //         headers: {
 //           "Content-Type": "application/json",
 //         },
@@ -297,7 +297,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault(); // Prevent default form submission
 //     try {
-//       const response = await axios.post("http://localhost:9999/user/register", {
+//       const response = await axios.post("http://35.200.147.33/api/user/register", {
 //         name: fullName, // Send fullName as name
 //         email,
 //         password,
@@ -411,7 +411,7 @@ function RegisterPage() {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
     try {
-      const response = await axios.post("http://localhost:9999/user/register", {
+      const response = await axios.post("http://35.200.147.33/api/user/register", {
         name: fullName, // Send fullName as name
         email,
         password,
