@@ -168,9 +168,7 @@ const FaqPage = () => {
 
         // Make API request using axios with Authorization header
         const response = await axios.get('http://35.200.147.33/api/users/faqs', {
-          headers: {
-           user_token:token // Pass the token here
-          }
+          headers: { Authorization: `Bearer ${token}`}
         });
 
         setFaqData(response.data); // Set the FAQ data
