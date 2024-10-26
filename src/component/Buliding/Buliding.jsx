@@ -22,7 +22,7 @@ function Building() {
   const [userName, setUserName] = useState("");
   const [inPlayValue, setInPlayValue] = useState(0);
   const [credits, setCredits] = useState(0);
-
+//changes
 
   const navigate = useNavigate();
   // Show banner when the market is frozen
