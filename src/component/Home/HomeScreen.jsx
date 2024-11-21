@@ -122,7 +122,7 @@ import axios from "axios";
 //         if (userId) {
 //           console.log("User ID:", userId); // Debugging line
 //           // Fetch user list from the API
-//           axios.get("http://localhost:9999/users/userList", {
+//           axios.get("http://35.200.147.33/api/users/userList", {
 //             headers: { user_token: token }
 //           })
 //           .then(response => {
@@ -273,7 +273,7 @@ function HomeScreen() {
           const userId = decodedToken._id;
 
           axios
-            .get('http://localhost:9999/users/userList', {
+            .get('http://35.200.147.33/api/users/userList', {
               headers: { Authorization: `Bearer ${token}` },
             })
             .then((response) => {
@@ -308,7 +308,7 @@ function HomeScreen() {
 //         if (userId) {
 //           console.log("User ID:", userId); // Debugging line
 //           // Fetch user list from the API
-//           axios.get("http://localhost:9999/users/userList", {
+//           axios.get("http://35.200.147.33/api/users/userList", {
 //             headers: { Authorization: `Bearer ${token}` } // Pass token in Bearer format
 //           })
 //           .then(response => {

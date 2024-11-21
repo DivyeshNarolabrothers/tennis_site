@@ -63,7 +63,7 @@ function Building() {
     try {
       const Token = localStorage.getItem("user_token");
       const response = await axios.get(
-        "http://localhost:9999/users/market-status",
+        "http://35.200.147.33/api/users/market-status",
         {
           headers: { Authorization: `Bearer ${Token}`},
         }
@@ -95,7 +95,7 @@ function Building() {
   const fetchPlayers = async () => {
     const Token = localStorage.getItem("user_token");
     axios
-      .get("http://localhost:9999/users/players", {
+      .get("http://35.200.147.33/api/users/players", {
         headers: { Authorization: `Bearer ${Token}`},
       })
       .then((response) => {
@@ -280,7 +280,7 @@ function Building() {
   //     formData.append("players", JSON.stringify(playersData));
 
   //     const response = await axios.post(
-  //       `http://localhost:9999/users/add-team/${userId}`,
+  //       `http://35.200.147.33/api/users/add-team/${userId}`,
   //       formData,
   //       { headers: { Authorization: `Bearer ${Token}`} }
   //     );
@@ -333,7 +333,7 @@ function Building() {
       formData.append("players", JSON.stringify(playersData));
 
       const response = await axios.post(
-        `http://localhost:9999/users/add-team/${userId}`,
+        `http://35.200.147.33/api/users/add-team/${userId}`,
         formData,
         { headers: { Authorization: `Bearer ${Token}` } }
       );
@@ -373,7 +373,7 @@ function Building() {
 
       // Fetch the in-play value from the API
       axios
-        .get(`http://localhost:9999/users/user/in-play-value/${userId}`, {
+        .get(`http://35.200.147.33/api/users/user/in-play-value/${userId}`, {
           headers: { Authorization: `Bearer ${Token}` },
         })
         .then((response) => {
@@ -393,7 +393,7 @@ function Building() {
 
       // Fetch the overall value from another API (if needed)
       axios
-        .get(`http://localhost:9999/users/user/overall/${userId}`, {
+        .get(`http://35.200.147.33/api/users/user/overall/${userId}`, {
           headers: { Authorization: `Bearer ${Token}` },
         })
         .then((response) => {
@@ -496,7 +496,7 @@ function Building() {
                       <tr key={player._id}>
                         <td>
                           <img
-                            src={`http://localhost:9999/images/${player.profile_image}`}
+                            src={`http://35.200.147.33/api/images/${player.profile_image}`}
                             alt="Player Profile"
                             className="profile_image"
                             style={{
@@ -698,7 +698,7 @@ function Building() {
                           <div className="player-container">
                             {" "}
                             <img
-                              src={`http://localhost:9999/images/${icon.image}`}
+                              src={`http://35.200.147.33/api/images/${icon.image}`}
                               alt="Player Profile"
                               className="player-image"
                             />{" "}
@@ -729,7 +729,7 @@ function Building() {
                           >
                             {" "}
                             <img
-                              src={`http://localhost:9999/images/${icon.image}`}
+                              src={`http://35.200.147.33/api/images/${icon.image}`}
                               alt="Player Profile"
                               className="player-image"
                             />{" "}
@@ -764,7 +764,7 @@ function Building() {
                         <div className="player-container">
                           {" "}
                           <img
-                            src={`http://localhost:9999/images/${icon.image}`}
+                            src={`http://35.200.147.33/api/images/${icon.image}`}
                             alt="Player Profile"
                             className="player-image"
                           />{" "}

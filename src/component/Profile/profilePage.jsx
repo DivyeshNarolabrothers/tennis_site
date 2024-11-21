@@ -36,7 +36,7 @@ function ProfilePage() {
         const userId = decodedToken._id;
 
         const response = await axios.get(
-          `http://localhost:9999/users/user/profile/${userId}`,
+          `http://35.200.147.33/api/users/user/profile/${userId}`,
           {
             headers: { Authorization: `Bearer ${Token}` },
           }
@@ -129,7 +129,7 @@ function ProfilePage() {
       }
 
       const response = await axios.patch(
-        `http://localhost:9999/users/userdetails-updated/${userId}`,
+        `http://35.200.147.33/api/users/userdetails-updated/${userId}`,
         data,
         {
           headers: {
@@ -187,7 +187,7 @@ function ProfilePage() {
                 <tr>
                 <td className="td1">
                 <img
-                  src={`http://localhost:9999/images/${profileData.profile_image || "default-image.png"}`}
+                  src={`http://35.200.147.33/api/images/${profileData.profile_image || "default-image.png"}`}
                   alt="Profile"
                   style={{ width: "50px", height: "50px", borderRadius: "50%" }}
                 />
@@ -256,7 +256,7 @@ function ProfilePage() {
               <div className="mt-4" style={{ height: "100%" }}>
                 <h4>{`Team: ${profileData.team.name}`}</h4>
                 <img
-                  src={`http://localhost:9999/images/${profileData.team.profile_image}`}
+                  src={`http://35.200.147.33/api/images/${profileData.team.profile_image}`}
                   alt="Team Profile"
                   style={{ width: "100px", height: "100px", borderRadius: "50%" }}
                 />
@@ -283,7 +283,7 @@ function ProfilePage() {
                         <tr key={player._id}>
                           {/* <td className="td1">
                             <img
-                              src={`http://localhost:9999/images/${player.profile_image}`}
+                              src={`http://35.200.147.33/api/images/${player.profile_image}`}
                               alt={player.name}
                               style={{ width: "50px", height: "50px", borderRadius: "50%" }}
                             />

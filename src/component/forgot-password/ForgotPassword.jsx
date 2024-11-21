@@ -34,7 +34,7 @@
 //     e.preventDefault(); // Prevent default form submission
 //     try {
 //       const response = await axios.post(
-//         "http://localhost:9999/user/login",
+//         "http://35.200.147.33/api/user/login",
 //         {
 //           newpassword,
 //           confirmpassword,
@@ -199,7 +199,7 @@ const ForgotPassword = () => {
       // If OTP is already sent, submit OTP along with other details
       try {
         const response = await axios.patch(
-          "http://localhost:9999/user/forgotPassword",
+          "http://35.200.147.33/api/user/forgotPassword",
           {
             email,
             newPassword: newpassword,
@@ -226,7 +226,7 @@ const ForgotPassword = () => {
       // If OTP is not sent yet, trigger OTP sending
       try {
         const response = await axios.post(
-          "http://localhost:9999/user/otp",
+          "http://35.200.147.33/api/user/otp",
           { email },
           {
             headers: {
