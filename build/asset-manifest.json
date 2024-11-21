@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.fd270203.css",
-    "main.js": "/static/js/main.c370f4f0.js",
+    "main.css": "/static/css/main.8ce8f372.css",
+    "main.js": "/static/js/main.a8551f65.js",
     "static/js/453.8ce7641f.chunk.js": "/static/js/453.8ce7641f.chunk.js",
     "static/media/50460101 - Copy.jpg": "/static/media/50460101 - Copy.f7db17e9a9a8d2a4402a.jpg",
-    "static/media/50460101.jpg": "/static/media/50460101.475bc32e2376b92b3acc.jpg",
-    "static/media/tennis-racket.svg": "/static/media/tennis-racket.26628da754115c7c2477a37ed1b7d4a5.svg",
+    "static/media/Market.png": "/static/media/Market.39fc022d2c558b931358.png",
+    "static/media/Team.png": "/static/media/Team.2c56ca8275e1db03fd2f.png",
+    "static/media/profile.png": "/static/media/profile.7352cc40fd1c700ee5e3.png",
+    "static/media/Guide.png": "/static/media/Guide.f7eb8b8fe3633270ac77.png",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.fd270203.css.map": "/static/css/main.fd270203.css.map",
-    "main.c370f4f0.js.map": "/static/js/main.c370f4f0.js.map",
+    "main.8ce8f372.css.map": "/static/css/main.8ce8f372.css.map",
+    "main.a8551f65.js.map": "/static/js/main.a8551f65.js.map",
     "453.8ce7641f.chunk.js.map": "/static/js/453.8ce7641f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd270203.css",
-    "static/js/main.c370f4f0.js"
+    "static/css/main.8ce8f372.css",
+    "static/js/main.a8551f65.js"
   ]
 }
