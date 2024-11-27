@@ -22,8 +22,8 @@ function App() {
       <img src={image1} className="bg" alt="Background" />
       <img src={image2} className="bg2" alt="Background" />
 
-     
-        <Routes>
+  
+        <Routes basename={process.env.REACT_APP_HOMEPAGE}>
           <Route path="/resigter" element={<ResigterPage />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/" element={<Loginpage />} />
@@ -34,6 +34,8 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
      
+
+
     </div>
 
   );
